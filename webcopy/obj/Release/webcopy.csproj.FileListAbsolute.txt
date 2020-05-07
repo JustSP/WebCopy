@@ -1,0 +1,16 @@
+E:\local repos\webcopy\webcopy\bin\Release\webcopy.exe.config
+E:\local repos\webcopy\webcopy\bin\Release\webcopy.exe
+E:\local repos\webcopy\webcopy\bin\Release\webcopy.pdb
+E:\local repos\webcopy\webcopy\bin\Release\HtmlAgilityPack.dll
+E:\local repos\webcopy\webcopy\bin\Release\HtmlAgilityPack.pdb
+E:\local repos\webcopy\webcopy\bin\Release\HtmlAgilityPack.xml
+E:\local repos\webcopy\webcopy\obj\Release\webcopy.csprojAssemblyReference.cache
+E:\local repos\webcopy\webcopy\obj\Release\webcopy.frmMain.resources
+E:\local repos\webcopy\webcopy\obj\Release\webcopy.Properties.Resources.resources
+E:\local repos\webcopy\webcopy\obj\Release\webcopy.csproj.GenerateResource.cache
+E:\local repos\webcopy\webcopy\obj\Release\webcopy.csproj.CoreCompileInputs.cache
+E:\local repos\webcopy\webcopy\obj\Release\webcopy.csproj.CopyComplete
+E:\local repos\webcopy\webcopy\obj\Release\webcopy.exe
+E:\local repos\webcopy\webcopy\obj\Release\webcopy.pdb
+E:\local repos\webcopy\webcopy\bin\Release\System.Diagnostics.DiagnosticSource.dll
+E:\local repos\webcopy\webcopy\bin\Release\System.Diagnostics.DiagnosticSource.xml
