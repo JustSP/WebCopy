@@ -22,11 +22,17 @@ namespace webcopy
                     {
                         int length = sub.IndexOf(")");
 
+                        if ((sub.IndexOf("?") > -1) && (sub.IndexOf("?") < length))
+                            length = sub.IndexOf("?");
+
+                        if ((sub.IndexOf("#") > -1) && (sub.IndexOf("#") < length))
+                            length = sub.IndexOf("#");
+
                         if (length > 0)
                         {
                             string uri = sub.Substring(0, length);
 
-                            uri = uri.Replace("(", string.Empty);
+                            uri = uri.Replace("(", string.Empty).Replace("\"", string.Empty);
 
                             if (!uri.Contains("data:image"))
                                 uris.Add(uri);

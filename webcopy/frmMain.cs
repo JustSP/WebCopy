@@ -59,6 +59,7 @@ namespace webcopy
         {
             if (copyManager != null)
             {
+                chkSingleLevel.Enabled = !chkSingleLevel.Enabled;
                 btnCopy.Text = btnCopy.Text.ToLowerInvariant().Contains("copy") ? "Cancel" : "Copy";
                 CopyState = ProcessCommand.Analyzing;
             }
@@ -159,6 +160,7 @@ namespace webcopy
                 case ProcessCommand.Analyzed:
                     ToggleCopyButton();
                     ToggleProgress();
+                    CopyState = ProcessCommand.Idle;
                     break;
                 case ProcessCommand.Downloading:
                     break;
@@ -180,7 +182,7 @@ namespace webcopy
 
                 foreach (string page in result.Links.Distinct ().ToArray())
                 {
-                    if ((!downloadedPages.Contains (page)) & (!downloadQ.Contains (page)))
+                    if ((!downloadedPages.Contains(page)) & (!downloadQ.Contains(page)))
                         downloadQ.Enqueue(page);
                 }
 

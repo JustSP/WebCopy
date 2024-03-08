@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkSingleLevel = new System.Windows.Forms.CheckBox();
             this.pIndicator = new System.Windows.Forms.ProgressBar();
             this.btnCopy = new System.Windows.Forms.Button();
             this.txtURL = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkSingleLevel);
             this.panel1.Controls.Add(this.pIndicator);
             this.panel1.Controls.Add(this.btnCopy);
             this.panel1.Controls.Add(this.txtURL);
@@ -57,13 +59,23 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1385, 94);
+            this.panel1.Size = new System.Drawing.Size(1385, 133);
             this.panel1.TabIndex = 0;
+            // 
+            // chkSingleLevel
+            // 
+            this.chkSingleLevel.AutoSize = true;
+            this.chkSingleLevel.Location = new System.Drawing.Point(112, 79);
+            this.chkSingleLevel.Name = "chkSingleLevel";
+            this.chkSingleLevel.Size = new System.Drawing.Size(276, 32);
+            this.chkSingleLevel.TabIndex = 4;
+            this.chkSingleLevel.Text = "Download Single Level Tree";
+            this.chkSingleLevel.UseVisualStyleBackColor = true;
             // 
             // pIndicator
             // 
             this.pIndicator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pIndicator.Location = new System.Drawing.Point(0, 84);
+            this.pIndicator.Location = new System.Drawing.Point(0, 123);
             this.pIndicator.Name = "pIndicator";
             this.pIndicator.Size = new System.Drawing.Size(1385, 10);
             this.pIndicator.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
@@ -126,7 +138,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 94);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 133);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -136,7 +148,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.lstAssets);
-            this.splitContainer1.Size = new System.Drawing.Size(1385, 293);
+            this.splitContainer1.Size = new System.Drawing.Size(1385, 254);
             this.splitContainer1.SplitterDistance = 646;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -148,7 +160,7 @@
             this.lstPages.ItemHeight = 28;
             this.lstPages.Location = new System.Drawing.Point(0, 0);
             this.lstPages.Name = "lstPages";
-            this.lstPages.Size = new System.Drawing.Size(646, 293);
+            this.lstPages.Size = new System.Drawing.Size(646, 254);
             this.lstPages.TabIndex = 0;
             // 
             // lstAssets
@@ -159,7 +171,7 @@
             this.lstAssets.ItemHeight = 28;
             this.lstAssets.Location = new System.Drawing.Point(0, 0);
             this.lstAssets.Name = "lstAssets";
-            this.lstAssets.Size = new System.Drawing.Size(735, 293);
+            this.lstAssets.Size = new System.Drawing.Size(735, 254);
             this.lstAssets.TabIndex = 1;
             // 
             // bgProcess
@@ -172,6 +184,7 @@
             // 
             // frmMain
             // 
+            this.AcceptButton = this.btnCopy;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1385, 552);
@@ -209,6 +222,7 @@
         private System.Windows.Forms.ListBox lstAssets;
         private System.Windows.Forms.TextBox txtLog;
         private System.ComponentModel.BackgroundWorker bgProcess;
+        private System.Windows.Forms.CheckBox chkSingleLevel;
     }
 }
 

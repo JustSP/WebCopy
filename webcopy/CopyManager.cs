@@ -28,7 +28,10 @@ namespace webcopy
             try
             {
                 HtmlDocument page = web.Load(Website);
-                return page.DocumentNode.SelectSingleNode("//head/title").InnerText;
+                HtmlNode selectedNode = page.DocumentNode.SelectSingleNode("//head/title");
+
+                if (selectedNode != null)
+                    return selectedNode.InnerText;
             }
             catch (Exception ex)
             {
@@ -51,6 +54,12 @@ namespace webcopy
                     result.Links.AddRange(GetLinksFromCSS(Website.AbsoluteUri, webPage).ToArray());
                 else
                     result.Links.AddRange(GetLinks(Website.AbsoluteUri, page).ToArray());
+
+                if (result.Links.Count < 1)
+                {
+                    SecondPass(Website.AbsoluteUri, webPage);
+                    // do second pass (just to be sure)
+                }
             }
             catch (Exception ex)
             {
@@ -98,6 +107,24 @@ namespace webcopy
             }
 
             return false;
+        }
+
+        private IEnumerable<string> SecondPass(string parentPagePath, string URL)
+        {
+            string pageContent = string.Empty;
+            using (WebClient client = new WebClient())
+            {
+                pageContent = client.DownloadString(URL);
+            }
+
+            if ((pageContent != null) && (!pageContent.Equals(string.Empty)))
+            {
+                HtmlDocument page = new HtmlDocument();
+                page.LoadHtml(WebUtility.HtmlDecode(pageContent));
+                return GetLinks(parentPagePath, page);
+            }
+
+            return new List<string>();
         }
 
         private IEnumerable<string> GetLinks(string parentPagePath, HtmlDocument page)
@@ -159,7 +186,7 @@ namespace webcopy
             CSSParser cssParser = new CSSParser();
 
             string cssContent = string.Empty;
-            using (WebClient client = new WebClient ())
+            using (WebClient client = new WebClient())
             {
                 cssContent = client.DownloadString(cssFile);
             }
